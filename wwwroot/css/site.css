@@ -21,7 +21,7 @@ body {
   margin-bottom: 60px;
 }
 
-.card-image {
+.card-image-top, .card-image {
     height: 100px;
     width: auto;
 }

@@ -10,29 +10,33 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<div class="flex-row" style="margin:10px">
-    @foreach (var item in Model)
-    {
-        <div class="card" style="width:50%">
-            <div class="card-img" style="background-image:url('@item.ImageUrl)')">
-                <div class="card-body">
-                    <h2 class="card-title">@Html.DisplayFor(modelItem =>item.Title)</h2>
-                    <h6>Created on: @Html.DisplayFor(modelItem => item.DateCreated) | Last Update: @Html.DisplayFor(modelItem=>item.DateUpdated)</h6>
-                    <h6>By: @Html.DisplayFor(modelItem=>item.Author)</h6>
-                    <p class="card-subtitle">
-                        @Html.DisplayFor(modelItem =>item.Description)
-                    </p>
-                    <hr>
-                    <p>
-                        @Html.DisplayFor(modelItem =>item.Content)
-                    </p>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+<div class="container pb-5 mb-sm-1">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="card border-1 mb-grid-gutter">
+                    <div class="card-img-top" style="background-image:url('@item.ImageUrl'); height:100px; opacity=60%">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">@Html.DisplayFor(modelItem =>item.Title)</h2>
+                        <h6>Created on: @Html.DisplayFor(modelItem => item.DateCreated) | Last Update: @Html.DisplayFor(modelItem=>item.DateUpdated)</h6>
+                        <h6>By: @Html.DisplayFor(modelItem=>item.Author)</h6>
+                        <p class="card-subtitle">
+                            @Html.DisplayFor(modelItem =>item.Description)
+                        </p>
+                        <hr>
+                        <p>
+                            @Html.DisplayFor(modelItem =>item.Content)
+                        </p>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div> 
 </div>
 @*<table class="table">
     <thead>
